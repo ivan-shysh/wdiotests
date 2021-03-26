@@ -22,7 +22,11 @@ describe('Auth', () => {
         LoginPage.setPassword('password');
         LoginPage.clickSubmitButton();
         LoginPage.errorToastAppeared();
+    });
 
+    it('should display error message for wrong email format', () => {
+        LoginPage.setLogin('gor2.gmail.com');
+        LoginPage.emailErrorAppeared();
     })
 
     afterEach(() => {
