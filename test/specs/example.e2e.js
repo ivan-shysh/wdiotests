@@ -27,6 +27,21 @@ describe('Auth', () => {
     it('should display error message for wrong email format', () => {
         LoginPage.setLogin('gor2.gmail.com');
         LoginPage.emailErrorAppeared();
+    });
+
+  /*  it('should display error message when no email provided for login', () => {
+        LoginPage.setLogin('frabob@bob.com');
+        browser.pause('3000');
+        browser.doubleClick;
+        browser.keys('Backspace');
+        browser.pause('3000');
+    });           */
+
+    it.only('login input is required', () => {
+        LoginPage.setLogin('example');
+        LoginPage.emptyLoginInput();
+        browser.pause('3000');
+        LoginPage.loginRequiredError();
     })
 
     afterEach(() => {
